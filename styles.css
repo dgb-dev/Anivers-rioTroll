@@ -1,0 +1,184 @@
+body {
+    font-family: 'Poppins', sans-serif; /* Fonte mais moderna */
+    background-color: #f4f7fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 40px 20px; /* Mais espaço interno */
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 400px;
+    width: 90%;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #FF4081;
+    margin-bottom: 30px; /* Espaço maior abaixo do título */
+}
+
+.gift-box {
+    font-size: 5rem;
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s;
+    margin-bottom: 40px; /* Mais espaço abaixo do presente */
+}
+
+.gift-box:hover {
+    transform: scale(1.2);
+    color: #FF4081;
+}
+
+.hidden {
+    display: none;
+}
+
+#message h2 {
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 40px; /* Espaço entre a mensagem e o botão */
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.5; /* Melhor legibilidade */
+    padding: 0 15px; /* Margens internas para manter o texto respirando */
+}
+#fugir-btn {
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    cursor: pointer;
+    background-color: #FF4081;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    position: absolute;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    /* Inicialmente invisível */
+    opacity: 0;
+    transform: translateY(50px); /* Começa abaixo da posição original */
+}
+
+#fugir-btn.show {
+    animation: slideIn 1s ease forwards, pulse 1.5s infinite; /* Animações adicionadas */
+}
+
+#fugir-btn:hover {
+    background-color: #ff6090;
+}
+
+/* Animação de entrada do botão */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efeito de pulso contínuo */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Confetes */
+.confetti {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    animation: fall linear infinite;
+    border-radius: 50%;
+    opacity: 0.8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 100vh;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Responsividade */
+
+/* Telas pequenas (smartphones) */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .gift-box {
+        font-size: 4rem;
+    }
+
+    #message h2 {
+        font-size: 1.5rem;
+    }
+
+    #fugir-btn {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}
+
+/* Telas médias (tablets) */
+@media (max-width: 900px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .gift-box {
+        font-size: 4.5rem;
+    }
+
+    #message h2 {
+        font-size: 1.8rem;
+    }
+
+    #fugir-btn {
+        font-size: 1.1rem;
+        padding: 9px 18px;
+    }
+}
+
+/* Telas grandes (desktops grandes) */
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .gift-box {
+        font-size: 6rem;
+    }
+
+    #message h2 {
+        font-size: 2.2rem;
+    }
+
+    #fugir-btn {
+        font-size: 1.4rem;
+        padding: 12px 24px;
+    }
+}

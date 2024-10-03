@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parabéns!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Clique no Presente</h1>
+        <div class="gift-box" onclick="openGift()">
+            🎁
+        </div>
+    </div>
+
+    <!-- Mensagem de parabéns oculta -->
+    <div id="message" class="hidden">
+        <h2>Vocês são incríveis! Que esse dia seja tão especial quanto vocês! 🎉🎉</h2>
+        <!-- Botão que vai "fugir" -->
+        <button id="fugir-btn" class="hidden" onclick="moveButton()">Receber Pix de R$100!</button>
+    </div>
+
+    <audio id="audio" src="sons/Pout-Pourri_ Hoje é seu aniversário _ Parabéns á você (Happy Birthday to You).mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
